@@ -4,7 +4,7 @@ import SwiftUI
 
 public struct UIKitNavigation<Content: View>: View {
     
-    var body: some View {
+    public var body: some View {
         UIKitNavigationImplementation {
             root
         }

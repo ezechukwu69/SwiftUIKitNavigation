@@ -12,7 +12,7 @@ import UIKit
 #endif
 
 @available(iOS 13.0, *)
-public struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepresentable {
+struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepresentable {
     
     let root: Content?
     
@@ -20,7 +20,7 @@ public struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepr
         root = content()
     }
     
-    func makeUIViewController(context: Context) -> UIViewController {
+    public func makeUIViewController(context: Context) -> UIViewController {
         let nav = NavManager.shared.navController
         let vc = UIController(rootView: root)
         vc.setTag(0)
@@ -28,11 +28,11 @@ public struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepr
         return nav
     }
     
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         
     }
     
     
-    typealias UIViewControllerType = UIViewController
+    public typealias UIViewControllerType = UIViewController
     
 }

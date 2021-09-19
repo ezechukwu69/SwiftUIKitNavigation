@@ -3,7 +3,7 @@ import SwiftUI
 
 
 public struct UIKitNavigation<Content: View>: View {
-    
+        
     public var body: some View {
         UIKitNavigationImplementation {
             root
@@ -16,7 +16,7 @@ public struct UIKitNavigation<Content: View>: View {
     let safeIgnoreRegion: SafeAreaRegions
     let root: Content?
     
-    init(_ regions: SafeAreaRegions = .keyboard,
+    public init(_ regions: SafeAreaRegions = .keyboard,
          _ edges: Edge.Set = .all,
          _ safeAreasIgnore: Edge.Set = .all,
          @ViewBuilder content: () -> Content) {
@@ -26,7 +26,7 @@ public struct UIKitNavigation<Content: View>: View {
         self.edges = edges
     }
     
-    init(_ regions: SafeAreaRegions = .keyboard,
+    public init(_ regions: SafeAreaRegions = .keyboard,
         edges: Edge.Set = .all,
         safeAreasIgnore: Edge.Set = .all,
         hideAppBar: Bool = false,

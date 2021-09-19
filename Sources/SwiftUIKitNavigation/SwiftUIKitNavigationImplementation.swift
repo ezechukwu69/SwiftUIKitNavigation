@@ -16,7 +16,7 @@ struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepresentab
     
     let root: Content?
     
-    init(@ViewBuilder content: () -> Content) {
+    public init(@ViewBuilder content: () -> Content) {
         root = content()
     }
     

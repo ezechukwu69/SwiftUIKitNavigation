@@ -11,30 +11,30 @@ import UIKit
 public class NavManager {
     let navController: UINavigationController
     
-    init() {
+    private init() {
         print("Init")
         navController = UINavigationController()
     }
     
-    static func pop(animated:Bool = true) {
+    public static func pop(animated:Bool = true) {
         NavManager.shared.navController.popViewController(animated: animated)
     }
     
-    static func pop(animated:Bool = true, showAppBar: Bool = true) {
+    public static func pop(animated:Bool = true, showAppBar: Bool = true) {
         NavManager.shared.navController.popViewController(animated: animated)
         NavManager.shared.navController.navigationBar.isHidden = !showAppBar
     }
     
-    static func popToRoot(animated:Bool = true) {
+    public static func popToRoot(animated:Bool = true) {
         NavManager.shared.navController.popToRootViewController(animated: animated)
     }
     
-    static func popToRoot(animated:Bool = true, showAppBar: Bool = true) {
+    public static func popToRoot(animated:Bool = true, showAppBar: Bool = true) {
         NavManager.shared.navController.popViewController(animated: animated)
         NavManager.shared.navController.navigationBar.isHidden = !showAppBar
     }
     
-    static func popToViewController(withTag tag: Int, animated: Bool = true) {
+    public static func popToViewController(withTag tag: Int, animated: Bool = true) {
         let nc = NavManager.shared.navController
          let index = nc.viewControllers.lastIndex { view in
             return view.view.tag == tag
@@ -45,7 +45,7 @@ public class NavManager {
         nc.popToViewController(nc.viewControllers[i], animated: true)
     }
     
-    static func popToViewController(withTag tag: Int, animated:Bool = true, showAppBar: Bool = true) {
+    public static func popToViewController(withTag tag: Int, animated:Bool = true, showAppBar: Bool = true) {
         let nc = NavManager.shared.navController
          let index = nc.viewControllers.lastIndex { view in
             return view.view.tag == tag
@@ -57,5 +57,5 @@ public class NavManager {
         NavManager.shared.navController.navigationBar.isHidden = !showAppBar
     }
     
-    static let shared = NavManager()
+    public static let shared = NavManager()
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 
 public class UIController<Content: View>: UIHostingController<Content> {
-    func setTag(_ tag: Int) {
+    public func setTag(_ tag: Int) {
         self.view.tag = tag
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 
 
-struct UIKitNavigation<Content: View>: View {
+public struct UIKitNavigation<Content: View>: View {
     
     var body: some View {
         UIKitNavigationImplementation {

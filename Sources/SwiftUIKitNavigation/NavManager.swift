@@ -8,7 +8,7 @@
 import UIKit
 
 
-class NavManager {
+public class NavManager {
     let navController: UINavigationController
     
     init() {

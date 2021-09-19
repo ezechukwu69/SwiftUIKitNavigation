@@ -8,11 +8,11 @@
 import SwiftUI
 import UIKit
 
-protocol Page: View {
+public protocol Page: View {
     var tag: Int { get set }
 }
 
-class Stack<Content: View> {
+public class Stack<Content: View> {
     
     static func createPage(_ tag: Int, @ViewBuilder _ view: () -> Content) -> UIHostingController<Content> {
         let vc = UIController(rootView: view())

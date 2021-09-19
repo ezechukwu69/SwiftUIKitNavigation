@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-class UIController<Content: View>: UIHostingController<Content> {
+public class UIController<Content: View>: UIHostingController<Content> {
     func setTag(_ tag: Int) {
         self.view.tag = tag
     }

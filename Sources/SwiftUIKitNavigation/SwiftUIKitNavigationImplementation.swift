@@ -12,7 +12,7 @@ import UIKit
 #endif
 
 @available(iOS 13.0, *)
-struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepresentable {
+public struct UIKitNavigationImplementation<Content: View>: UIViewControllerRepresentable {
     
     let root: Content?
     

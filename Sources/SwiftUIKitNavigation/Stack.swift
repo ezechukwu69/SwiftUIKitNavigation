@@ -8,6 +8,9 @@
 import SwiftUI
 import UIKit
 
+protocol Page: View {
+    var tag: Int { get set }
+}
 
 class Stack<Content: View> {
     

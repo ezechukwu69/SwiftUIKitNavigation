@@ -1,11 +1,29 @@
     import XCTest
+    import SwiftUI
     @testable import SwiftUIKitNavigation
 
     final class SwiftUIKitNavigationTests: XCTestCase {
+        
+        
         func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-//            XCTAssertEqual(SwiftUIKitNavigation.text, "Hello, World!")
+            
+            var body: some View {
+                SwiftUIKitNavigation.UIKitNavigation {
+                    ContentView()
+                }
+            }
+            
+        }
+        
+        static var allTests = [
+            ("testExample", testExample)
+        ]
+    }
+    
+    
+    
+    struct ContentView: View {
+        var body: some View {
+            Text("Hello world")
         }
     }

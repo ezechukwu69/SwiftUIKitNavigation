@@ -9,7 +9,7 @@ import UIKit
 
 
 public class NavManager {
-    let navController: UINavigationController
+    public let navController: UINavigationController
     
     private init() {
         print("Init")

@@ -27,13 +27,13 @@ public class Stack<Content: View> {
     }
     
     public static func pushViews<Content: View>(_ tag: Int = 1,animated:Bool = true,_ views: [Content]) {
-        NavManager.shared.navController.viewControllers = NavManager.shared.navController.viewControllers + view.map({ view in
+        NavManager.shared.navController.viewControllers = NavManager.shared.navController.viewControllers + views.map({ view in
             UIController(rootView: view)
         })
     }
     
     public static func pushViewsAndMakeRoot<Content: View>(_ tag: Int = 1,animated:Bool = true,_ views: [Content]) {
-        NavManager.shared.navController.viewControllers = view.map({ view in
+        NavManager.shared.navController.viewControllers = views.map({ view in
             UIController(rootView: view)
         })
     }

@@ -20,7 +20,7 @@ public class Stack<Content: View> {
         return vc
     }
     
-    public static func push<Content: View>(_ tag: Int = 1,animated:Bool = true,@ViewBuilder _ view: () -> Content) {
+    public static func push(_ tag: Int = 1,animated:Bool = true,@ViewBuilder _ view: () -> Content) {
         let vc = UIController(rootView: view())
         vc.setTag(tag)
         NavManager.shared.navController.pushViewController(vc, animated: animated)
@@ -34,7 +34,7 @@ public class Stack<Content: View> {
         NavManager.shared.navController.navigationBar.isHidden = !showAppBar
     }
     
-    public static func pushAndMakeRoot<Content: View>(showAppBar: Bool = true,animated: Bool = true,@ViewBuilder _ view: () -> Content) {
+    public static func pushAndMakeRoot(showAppBar: Bool = true,animated: Bool = true,@ViewBuilder _ view: () -> Content) {
         let vc = UIController(rootView: view())
         vc.setTag(0)
         NavManager.shared.navController.setViewControllers([vc], animated: animated)
